@@ -7,8 +7,9 @@ class BirdsController < ApplicationController
   end
 
   # POST /birds
-  def create
-    bird = Bird.create(name: params[:name], species: params[:species])
+  def create #hash below with key/ value pairs.. could also write like ......bird = Bird.create({name: params[:name], species: params[:species]})
+    #byebug
+    bird = Bird.create(name: params[:name], species: params[:species]) #mass assignment allows u to set many attributes key value pairs ..instead do> bird = Bird.create(params)
     render json: bird, status: :created
   end
 
